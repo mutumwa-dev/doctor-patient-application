@@ -1,0 +1,74 @@
+type Appointment = record {
+  id : nat64;
+  patient_id : nat64;
+  multimedia_content : opt MultiMediaContent;
+  date_time : nat64;
+  doctor_id : nat64;
+  reason : text;
+};
+type Error = variant {
+  InvalidInput : record { msg : text };
+  NotFound : record { msg : text };
+};
+type MedicalRecord = record {
+  id : nat64;
+  patient_id : nat64;
+  lab_results : text;
+  treatment_history : text;
+};
+type Message = record {
+  id : nat64;
+  receiver_id : nat64;
+  content : text;
+  multimedia_content : opt MultiMediaContent;
+  sender_id : nat64;
+};
+type MultiMediaContent = record {
+  image_url : opt text;
+  audio_url : opt text;
+  video_url : opt text;
+};
+type Patient = record {
+  id : nat64;
+  name : text;
+  contact_details : text;
+  medical_history : text;
+};
+type Result = variant { Ok; Err : Error };
+type Result_1 = variant { Ok : Appointment; Err : Error };
+type Result_2 = variant { Ok : MedicalRecord; Err : Error };
+type Result_3 = variant { Ok : Message; Err : Error };
+type Result_4 = variant { Ok : Patient; Err : Error };
+service : {
+  delete_appointment : (nat64) -> (Result);
+  delete_medical_record : (nat64) -> (Result);
+  delete_message : (nat64) -> (Result);
+  delete_patient : (nat64) -> (Result);
+  get_appointment : (nat64) -> (Result_1) query;
+  get_medical_record : (nat64) -> (Result_2) query;
+  get_message : (nat64) -> (Result_3) query;
+  get_patient : (nat64) -> (Result_4) query;
+  list_appointments : () -> (vec Appointment) query;
+  list_medical_records : () -> (vec MedicalRecord) query;
+  list_messages : () -> (vec Message) query;
+  list_patients : () -> (vec Patient) query;
+  register_patient : (text, text, text) -> (Result_4);
+  schedule_appointment : (nat64, nat64, nat64, text, opt MultiMediaContent) -> (
+      Result_1,
+    );
+  send_message : (nat64, nat64, text, opt MultiMediaContent) -> (Result_3);
+  send_reminder_to_patient : (nat64, text, opt MultiMediaContent) -> (Result_3);
+  update_appointment : (
+      nat64,
+      nat64,
+      nat64,
+      nat64,
+      text,
+      opt MultiMediaContent,
+    ) -> (Result_1);
+  update_medical_record : (nat64, nat64, text, text) -> (Result_2);
+  update_message : (nat64, nat64, nat64, text, opt MultiMediaContent) -> (
+      Result_3,
+    );
+  update_patient : (nat64, text, text, text) -> (Result_4);
+}
