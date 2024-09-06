@@ -18,13 +18,6 @@ export const idlFactory = ({ IDL }) => {
     'reason' : IDL.Text,
   });
   const Result_1 = IDL.Variant({ 'Ok' : Appointment, 'Err' : Error });
-  const MedicalRecord = IDL.Record({
-    'id' : IDL.Nat64,
-    'patient_id' : IDL.Nat64,
-    'lab_results' : IDL.Text,
-    'treatment_history' : IDL.Text,
-  });
-  const Result_2 = IDL.Variant({ 'Ok' : MedicalRecord, 'Err' : Error });
   const Message = IDL.Record({
     'id' : IDL.Nat64,
     'receiver_id' : IDL.Nat64,
@@ -32,30 +25,35 @@ export const idlFactory = ({ IDL }) => {
     'multimedia_content' : IDL.Opt(MultiMediaContent),
     'sender_id' : IDL.Nat64,
   });
-  const Result_3 = IDL.Variant({ 'Ok' : Message, 'Err' : Error });
+  const Result_2 = IDL.Variant({ 'Ok' : Message, 'Err' : Error });
   const Patient = IDL.Record({
     'id' : IDL.Nat64,
     'name' : IDL.Text,
     'contact_details' : IDL.Text,
     'medical_history' : IDL.Text,
   });
-  const Result_4 = IDL.Variant({ 'Ok' : Patient, 'Err' : Error });
+  const Result_3 = IDL.Variant({ 'Ok' : Patient, 'Err' : Error });
+  const MedicalRecord = IDL.Record({
+    'id' : IDL.Nat64,
+    'patient_id' : IDL.Nat64,
+    'lab_results' : IDL.Text,
+    'treatment_history' : IDL.Text,
+  });
+  const Result_4 = IDL.Variant({ 'Ok' : MedicalRecord, 'Err' : Error });
   return IDL.Service({
-    'delete_appointment' : IDL.Func([IDL.Nat64], [Result], []),
     'delete_medical_record' : IDL.Func([IDL.Nat64], [Result], []),
     'delete_message' : IDL.Func([IDL.Nat64], [Result], []),
     'delete_patient' : IDL.Func([IDL.Nat64], [Result], []),
     'get_appointment' : IDL.Func([IDL.Nat64], [Result_1], ['query']),
-    'get_medical_record' : IDL.Func([IDL.Nat64], [Result_2], ['query']),
-    'get_message' : IDL.Func([IDL.Nat64], [Result_3], ['query']),
-    'get_patient' : IDL.Func([IDL.Nat64], [Result_4], ['query']),
+    'get_message' : IDL.Func([IDL.Nat64], [Result_2], ['query']),
+    'get_patient' : IDL.Func([IDL.Nat64], [Result_3], ['query']),
     'list_appointments' : IDL.Func([], [IDL.Vec(Appointment)], ['query']),
     'list_medical_records' : IDL.Func([], [IDL.Vec(MedicalRecord)], ['query']),
     'list_messages' : IDL.Func([], [IDL.Vec(Message)], ['query']),
     'list_patients' : IDL.Func([], [IDL.Vec(Patient)], ['query']),
     'register_patient' : IDL.Func(
         [IDL.Text, IDL.Text, IDL.Text],
-        [Result_4],
+        [Result_3],
         [],
       ),
     'schedule_appointment' : IDL.Func(
@@ -65,39 +63,27 @@ export const idlFactory = ({ IDL }) => {
       ),
     'send_message' : IDL.Func(
         [IDL.Nat64, IDL.Nat64, IDL.Text, IDL.Opt(MultiMediaContent)],
-        [Result_3],
+        [Result_2],
         [],
       ),
     'send_reminder_to_patient' : IDL.Func(
         [IDL.Nat64, IDL.Text, IDL.Opt(MultiMediaContent)],
-        [Result_3],
-        [],
-      ),
-    'update_appointment' : IDL.Func(
-        [
-          IDL.Nat64,
-          IDL.Nat64,
-          IDL.Nat64,
-          IDL.Nat64,
-          IDL.Text,
-          IDL.Opt(MultiMediaContent),
-        ],
-        [Result_1],
+        [Result_2],
         [],
       ),
     'update_medical_record' : IDL.Func(
         [IDL.Nat64, IDL.Nat64, IDL.Text, IDL.Text],
-        [Result_2],
+        [Result_4],
         [],
       ),
     'update_message' : IDL.Func(
         [IDL.Nat64, IDL.Nat64, IDL.Nat64, IDL.Text, IDL.Opt(MultiMediaContent)],
-        [Result_3],
+        [Result_2],
         [],
       ),
     'update_patient' : IDL.Func(
         [IDL.Nat64, IDL.Text, IDL.Text, IDL.Text],
-        [Result_4],
+        [Result_3],
         [],
       ),
   });
