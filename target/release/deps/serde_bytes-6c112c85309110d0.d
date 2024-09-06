@@ -1,0 +1,11 @@
+/Users/nickkz/Documents/doctor-patient-app/target/release/deps/libserde_bytes-6c112c85309110d0.rmeta: /Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/lib.rs /Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/bytes.rs /Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/de.rs /Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/ser.rs /Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/bytebuf.rs
+
+/Users/nickkz/Documents/doctor-patient-app/target/release/deps/libserde_bytes-6c112c85309110d0.rlib: /Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/lib.rs /Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/bytes.rs /Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/de.rs /Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/ser.rs /Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/bytebuf.rs
+
+/Users/nickkz/Documents/doctor-patient-app/target/release/deps/serde_bytes-6c112c85309110d0.d: /Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/lib.rs /Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/bytes.rs /Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/de.rs /Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/ser.rs /Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/bytebuf.rs
+
+/Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/lib.rs:
+/Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/bytes.rs:
+/Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/de.rs:
+/Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/ser.rs:
+/Users/nickkz/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_bytes-0.11.12/src/bytebuf.rs:
